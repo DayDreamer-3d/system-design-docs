@@ -36,6 +36,7 @@ context a preset is defined in, for instance,
 |_Event:Role:Team:User_ | _preset_ |
 | VersionsCreated:All:All:Default | {message_format: individual, delivery_medium: email, subscribers: [Ryan, Raphael, Brian, Anurag] } |
 | VersionsCreated:All:All:Ryan | {     message_format: digest,     schedule_delivery: EOD,     delivery_medium: email } |
+
 Here,
 - First part of the scope denotes the event type
 - Second part denotes the role/domain/area.
@@ -224,7 +225,7 @@ Finally, enqueue them based on delivery_medium value, in our case that would be 
 
 #### DISPATCH STAGE
 
-![dispatch stage subscription design](./dispatch-stage-subs-design.png)
+![dispatch stage subscription design](./images/dispatch-stage-subs-design.png)
 
 After the messages have been scheduled, they get picked by the dispatcher workers which first authenticate the device and email from identity provider and then send the encrypted message to the 3rd party email and push notification provider like FCM which in turn delivers the message as notification to the user’s device.
 
